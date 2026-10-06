@@ -6,7 +6,7 @@
   <title>Washing Machine Repair - TweedeLeven</title>
   <meta name="description" content="Urgent repair of washing, dishwashing and drying machines at home. Check-out in 60 minutes. The warranty is up to 12 months" />
   <link href="client/styles.css" rel="stylesheet">
-  <!-- <script src="client/script.js" defer></script> -->
+  <script src="client/script.js" defer></script>
 </head>
 <body>
   <header>
@@ -57,20 +57,24 @@
 
     <section class="container section" id="order">
       <h2>Order Repair</h2>
-      <div class="card" style="margin-top:20px">
-        <form action="https://formspree.io/f/mqadbjrp" method="POST">
-          <input class="input" type="text" name="name" placeholder="Your Name" required>
-          <input class="input" type="tel" name="phone" placeholder="Phone" required>
-          <textarea class="input" name="issue" rows="3" placeholder="Describe the problem"></textarea>
-          <button class="btn primary" type="submit">Submit</button>
-        </form>
-        <!-- <form id="request-form" action="/request" method="POST">
-          <input class="input" type="text" name="name" placeholder="Your Name" required>
-          <input class="input" type="tel" name="phone" placeholder="Phone" required>
-          <textarea class="input" name="issue" rows="3" placeholder="Describe the problem"></textarea>
-          <button class="btn primary" type="submit">Submit</button>
-        </form> -->
-        <div id="form-msg" style="margin-top:10px;color:green;"></div>
+      <div class="card" style="margin-top:20px; display:flex; gap:20px; align-items:center; justify-content:space-between;">
+        <div>
+          <p class="muted">Fast on-site repair. Call or write to order.</p>
+          <div style="margin-top:12px; display:flex; gap:8px; flex-direction:column;">
+            <a class="btn primary" href="tel:+31645831065">+31 6 45 83 10 65</a>
+            <a class="btn" href="mailto:info@tweedeleven.example">info@tweedeleven.example</a>
+            <div class="card" style="padding:10px; display:inline-block; border-radius:8px;">Address: Keizersgracht 123, Amsterdam</div>
+          </div>
+        </div>
+        <div>
+          <button id="show-order-btn" class="btn primary">Order repair</button>
+        </div>
+      </div>
+      <div id="order-block" class="card" style="margin-top:12px; display:none;">
+        <h3>Contact Details</h3>
+        <p>Phone: <a href="tel:+31645831065">+31 6 45 83 10 65</a></p>
+        <p>Email: <a href="mailto:info@tweedeleven.example">info@tweedeleven.example</a></p>
+        <p>Address: Keizersgracht 123, Amsterdam</p>
       </div>
     </section>
   </main>
