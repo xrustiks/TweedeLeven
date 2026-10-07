@@ -375,8 +375,12 @@ footer {
 
   .nav-actions {
     width: 100%;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
+  }
+
+  .lang-switcher {
+    margin: 0 auto;
   }
 
   .nav-bar {
