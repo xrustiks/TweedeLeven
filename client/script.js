@@ -290,7 +290,7 @@ languageButtons.forEach((button) => {
   });
 });
 
-applyLanguage('en');
+applyLanguage('nl');
 
 if (modalClose) modalClose.addEventListener('click', () => showModal(false));
 if (modalBackdrop) modalBackdrop.addEventListener('click', () => showModal(false));
