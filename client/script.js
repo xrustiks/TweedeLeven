@@ -150,6 +150,7 @@ const contactModal = document.getElementById('contact-modal');
 const modalClose = document.getElementById('modal-close');
 const modalBackdrop = document.getElementById('modal-backdrop');
 const emailCopyBtn = document.querySelector('.contact-email');
+const addressCopyBtn = document.querySelector('.contact-address');
 
 function showModal(show = true) {
   if (!contactModal) return;
@@ -221,6 +222,63 @@ if (emailCopyBtn) {
       }
     } finally {
       showCopiedState();
+    }
+  });
+}
+
+if (addressCopyBtn) {
+  const addressTextElement = addressCopyBtn.querySelector('.contact-address-text');
+  const addressValue = addressCopyBtn.dataset.address || 'Keizersgracht 123, Amsterdam';
+  let resetTimer;
+
+  if (addressTextElement && !addressTextElement.dataset.original) {
+    addressTextElement.dataset.original = addressTextElement.textContent;
+  }
+
+  const showAddressCopiedState = () => {
+    if (!addressTextElement) return;
+
+    const originalText = addressTextElement.dataset.original || addressTextElement.textContent;
+    addressTextElement.dataset.original = originalText;
+    addressTextElement.textContent = translations[currentLanguage.value]['copy.success'];
+    addressTextElement.setAttribute('aria-live', 'polite');
+    addressCopyBtn.classList.add('is-copied');
+
+    clearTimeout(resetTimer);
+    resetTimer = setTimeout(() => {
+      addressTextElement.textContent = originalText;
+      addressCopyBtn.classList.remove('is-copied');
+    }, 1000);
+  };
+
+  addressCopyBtn.addEventListener('click', async (event) => {
+    event.preventDefault();
+
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        await navigator.clipboard.writeText(addressValue);
+      } else {
+        const helper = document.createElement('textarea');
+        helper.value = addressValue;
+        document.body.appendChild(helper);
+        helper.select();
+        document.execCommand('copy');
+        document.body.removeChild(helper);
+      }
+    } catch (error) {
+      console.warn('Clipboard copy failed; showing visual feedback anyway.', error);
+      try {
+        const helper = document.createElement('textarea');
+        helper.value = addressValue;
+        document.body.appendChild(helper);
+        helper.select();
+        document.execCommand('copy');
+        document.body.removeChild(helper);
+      } catch (fallbackError) {
+        console.warn('Fallback copy also failed.', fallbackError);
+      }
+    } finally {
+      showAddressCopiedState();
     }
   });
 }
