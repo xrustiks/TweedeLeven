@@ -13,12 +13,21 @@
     <div class="container nav">
       <div class="logo">
         <div class="logo-title">TweedeLeven</div>
-        <div class="logo-description">washing machine repair service</div>
+        <div class="logo-description" data-i18n="brand.tagline">washing machine repair service</div>
       </div>
-      <div class="nav-bar">
-        <a class="btn" href="#services">Services</a>
-        <a class="btn" href="#prices">Price</a>
-        <a id="nav-contact-btn" class="btn primary" href="#order">Contact</a>
+
+      <div class="nav-actions">
+        <div class="lang-switcher" aria-label="Language selector">
+          <button class="lang-btn is-active" type="button" data-lang="en" aria-pressed="true">EN</button>
+          <button class="lang-btn" type="button" data-lang="ru" aria-pressed="false">RU</button>
+          <button class="lang-btn" type="button" data-lang="nl" aria-pressed="false">NL</button>
+        </div>
+
+        <div class="nav-bar">
+          <a class="btn" href="#services" data-i18n="nav.services">Services</a>
+          <a class="btn" href="#prices" data-i18n="nav.prices">Price</a>
+          <a id="nav-contact-btn" class="btn primary" href="#order" data-i18n="nav.contact">Contact</a>
+        </div>
       </div>
     </div>
   </header>
@@ -26,9 +35,9 @@
   <main>
     <section class="container hero">
       <div>
-        <h1>Washing Machine Repair at Home</h1>
-        <p>Fast and accurate. You pay only for result. Calling a machine repairman is free</p>
-        <a class="btn primary" href="tel:+31645831065">Make a call</a>
+        <h1 data-i18n="hero.title">Washing Machine Repair at Home</h1>
+        <p data-i18n="hero.subtitle">Fast and accurate. You pay only for result. Calling a machine repairman is free</p>
+        <a class="btn primary" href="tel:+31645831065" data-i18n="hero.cta">Make a call</a>
       </div>
       <div class="machine-images">
         <img src="client/resources/washing-machine-image.png" alt="Washing machine icon">
@@ -38,77 +47,90 @@
     </section>
 
     <section class="container section" id="services">
-      <h2>Popular services</h2>
+      <h2 data-i18n="services.heading">Popular services</h2>
       <div class="grid-3" style="margin-top:20px">
-        <div class="card"><h3>Not draining water</h3><p class="muted">Cleaning/replacing the pump and filters</p></div>
-        <div class="card"><h3>Not heating water</h3><p class="muted">Replacing the heating element and sensors</p></div>
-        <div class="card"><h3>Loud noise</h3><p class="muted">Bearings, shock absorbers</p></div>
+        <div class="card">
+          <h3 data-i18n="services.notDraining.title">Not draining water</h3>
+          <p class="muted" data-i18n="services.notDraining.text">Cleaning/replacing the pump and filters</p>
+        </div>
+        <div class="card">
+          <h3 data-i18n="services.notHeating.title">Not heating water</h3>
+          <p class="muted" data-i18n="services.notHeating.text">Replacing the heating element and sensors</p>
+        </div>
+        <div class="card">
+          <h3 data-i18n="services.noise.title">Loud noise</h3>
+          <p class="muted" data-i18n="services.noise.text">Bearings, shock absorbers</p>
+        </div>
       </div>
     </section>
 
     <section class="container section" id="prices">
-      <h2>Approximate prices</h2>
+      <h2 data-i18n="prices.heading">Approximate prices</h2>
       <div class="grid-2" style="margin-top:20px">
-        <div class="card"><h3>Diagnostics</h3><p class="muted">Free with repair</p><b>From €60</b></div>
-        <div class="card"><h3>Repair</h3><p class="muted">Depending on complexity</p><b>From €60</b></div>
+        <div class="card">
+          <h3 data-i18n="prices.diagnostics.title">Diagnostics</h3>
+          <p class="muted" data-i18n="prices.diagnostics.text">Free with repair</p>
+          <b data-i18n="prices.diagnostics.price">From €60</b>
+        </div>
+        <div class="card">
+          <h3 data-i18n="prices.repair.title">Repair</h3>
+          <p class="muted" data-i18n="prices.repair.text">Depending on complexity</p>
+          <b data-i18n="prices.repair.price">From €60</b>
+        </div>
       </div>
     </section>
 
     <section class="container section" id="order">
-      <h2>Order Repair</h2>
+      <h2 data-i18n="order.heading">Order Repair</h2>
       <div class="card" style="margin-top:20px;">
-        <p class="muted">Fast on-site repair. Click the button below to view contact options.</p>
-        <button id="open-contact-modal" class="btn big primary" style="width:100%; margin-top:18px;">Order repair</button>
+        <p class="muted" data-i18n="order.description">Fast on-site repair. Click the button below to view contact options.</p>
+        <button id="open-contact-modal" class="btn big primary" style="width:100%; margin-top:18px;" data-i18n="order.button">Order repair</button>
       </div>
 
-      <!-- Modal -->
       <div id="contact-modal" class="modal" aria-hidden="true" style="display:none;">
         <div class="modal-backdrop" id="modal-backdrop"></div>
         <div class="modal-content card">
           <button id="modal-close" class="modal-close">×</button>
           <div class="modal-body">
-            <h3>Order Repair — Contact Us</h3>
-            <p class="muted">Choose a convenient way to reach us.</p>
+            <h3 data-i18n="modal.title">Order Repair — Contact Us</h3>
+            <p class="muted" data-i18n="modal.subtitle">Choose a convenient way to reach us.</p>
 
             <div class="contact-grid" style="margin-top:12px;">
               <a class="contact-item" href="tel:+31645831065">
                 <div class="contact-icon" aria-hidden="true">
-                  <!-- phone SVG -->
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.08 4.18 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.72c.12.93.36 1.83.72 2.68a2 2 0 0 1-.45 2.11L9.91 9.91a16 16 0 0 0 6 6l1.4-1.4a2 2 0 0 1 2.11-.45c.85.36 1.75.6 2.68.72A2 2 0 0 1 22 16.92z" fill="#fff"/>
                   </svg>
                 </div>
                 <div>
-                  <div class="contact-title">Call us</div>
+                  <div class="contact-title" data-i18n="contact.call.title">Call us</div>
                   <div class="contact-sub">+31 6 45 83 10 65</div>
                 </div>
               </a>
 
-              <a class="contact-item" href="mailto:info@tweedeleven.example">
+              <button class="contact-item contact-email" type="button" data-email="info@tweedeleven.example" aria-label="Copy email address">
                 <div class="contact-icon" aria-hidden="true">
-                  <!-- mail SVG -->
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                     <path d="M3 8.5v7A2.5 2.5 0 0 0 5.5 18h13A2.5 2.5 0 0 0 21 15.5v-7" stroke="#fff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M3 8.5L12 13l9-4.5" stroke="#fff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
                 </div>
                 <div>
-                  <div class="contact-title">Email</div>
-                  <div class="contact-sub">info@tweedeleven.example</div>
+                  <div class="contact-title" data-i18n="contact.email.title">Email</div>
+                  <div class="contact-sub contact-email-text">info@tweedeleven.example</div>
                 </div>
-              </a>
+              </button>
 
               <div class="contact-item" role="button">
                 <div class="contact-icon" aria-hidden="true">
-                  <!-- location SVG -->
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                     <path d="M12 21s7-4.35 7-10a7 7 0 1 0-14 0c0 5.65 7 10 7 10z" fill="#fff"/>
                     <circle cx="12" cy="11" r="2.2" fill="#fff" />
                   </svg>
                 </div>
                 <div>
-                  <div class="contact-title">Visit</div>
-                  <div class="contact-sub">Keizersgracht 123, Amsterdam</div>
+                  <div class="contact-title" data-i18n="contact.address.title">Address</div>
+                  <div class="contact-sub" data-i18n="contact.address.sub">Keizersgracht 123, Amsterdam</div>
                 </div>
               </div>
             </div>
