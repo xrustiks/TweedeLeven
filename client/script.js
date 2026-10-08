@@ -1,8 +1,7 @@
 const translations = {
   en: {
     'brand.tagline': 'washing machine repair service',
-    'nav.services': 'Services',
-    'nav.prices': 'Price',
+    'nav.servicesAndPrices': 'Services and Prices',
     'nav.contact': 'Contact',
     'hero.title': 'Washing Machine Repair at Home',
     'hero.subtitle': 'Fast and accurate. You pay only for result. Calling a machine repairman is free',
@@ -34,8 +33,7 @@ const translations = {
   },
   ru: {
     'brand.tagline': 'сервис ремонта стиральных машин',
-    'nav.services': 'Услуги',
-    'nav.prices': 'Цены',
+    'nav.servicesAndPrices': 'Услуги и цены',
     'nav.contact': 'Контакты',
     'hero.title': 'Ремонт стиральных машин на дому',
     'hero.subtitle': 'Быстро и точно. Вы платите только за результат. Вызов мастера бесплатный',
@@ -67,8 +65,7 @@ const translations = {
   },
   nl: {
     'brand.tagline': 'service voor reparatie van wasmachines',
-    'nav.services': 'Diensten',
-    'nav.prices': 'Prijs',
+    'nav.servicesAndPrices': 'Diensten en prijzen',
     'nav.contact': 'Contact',
     'hero.title': 'Reparatie van wasmachines thuis',
     'hero.subtitle': 'Snel en nauwkeurig. U betaalt alleen voor het resultaat. Een monteur bellen is gratis',
@@ -146,6 +143,7 @@ if (showBtn && orderBlock) {
 // Modal handling
 const openModalBtn = document.getElementById('open-contact-modal');
 const navContactBtn = document.getElementById('nav-contact-btn');
+const servicesPricesBtn = document.getElementById('services-prices-btn');
 const contactModal = document.getElementById('contact-modal');
 const modalClose = document.getElementById('modal-close');
 const modalBackdrop = document.getElementById('modal-backdrop');
@@ -166,6 +164,19 @@ if (navContactBtn) {
   navContactBtn.addEventListener('click', (event) => {
     event.preventDefault();
     showModal(true);
+  });
+}
+
+if (servicesPricesBtn) {
+  servicesPricesBtn.addEventListener('click', (event) => {
+    event.preventDefault();
+    const target = document.getElementById('services');
+    if (!target) return;
+
+    target.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
   });
 }
 
