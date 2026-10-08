@@ -182,7 +182,7 @@ if (servicesPricesBtn) {
 
 if (emailCopyBtn) {
   const emailTextElement = emailCopyBtn.querySelector('.contact-email-text');
-  const emailValue = emailCopyBtn.dataset.email || 'info@tweedeleven.example';
+  const emailValue = emailCopyBtn.dataset.email || 'fathutdinovalbert23@gmail.com';
   let resetTimer;
 
   if (emailTextElement && !emailTextElement.dataset.original) {
