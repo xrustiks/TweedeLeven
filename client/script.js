@@ -28,7 +28,7 @@ const translations = {
     'contact.call.title': 'Call us',
     'contact.email.title': 'Email',
     'contact.address.title': 'Address',
-    'contact.address.sub': 'Keizersgracht 123, Amsterdam',
+    'contact.address.sub': 'Den Haag, De Tol 71',
     'copy.success': 'Copied!'
   },
   ru: {
@@ -92,7 +92,7 @@ const translations = {
     'contact.call.title': 'Bel ons',
     'contact.email.title': 'E-mail',
     'contact.address.title': 'Adres',
-    'contact.address.sub': 'Keizersgracht 123, Amsterdam',
+    'contact.address.sub': 'Den Haag, De Tol 71',
     'copy.success': 'Gekopieerd!'
   }
 };
@@ -239,7 +239,7 @@ if (emailCopyBtn) {
 
 if (addressCopyBtn) {
   const addressTextElement = addressCopyBtn.querySelector('.contact-address-text');
-  const addressValue = addressCopyBtn.dataset.address || 'Keizersgracht 123, Amsterdam';
+  const addressValue = addressCopyBtn.dataset.address || 'Den Haag, De Tol 71';
   let resetTimer;
 
   if (addressTextElement && !addressTextElement.dataset.original) {
