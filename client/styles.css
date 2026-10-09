@@ -331,10 +331,34 @@ section[id] {
   position: absolute;
   right: 14px;
   top: 10px;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
   background: transparent;
   border: none;
+  border-radius: 50%;
+  color: var(--muted);
   font-size: 24px;
+  line-height: 1;
   cursor: pointer;
+  transition: color .18s ease, background-color .18s ease, transform .18s ease;
+}
+
+.modal-close:hover {
+  background: rgba(52, 106, 184, 0.1);
+  color: var(--brand);
+  transform: rotate(90deg);
+}
+
+.modal-close:active {
+  transform: rotate(90deg) scale(0.92);
+}
+
+.modal-close:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
 }
 
 .contact-grid {
