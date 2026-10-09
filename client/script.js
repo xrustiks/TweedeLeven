@@ -175,7 +175,7 @@ if (showBtn && orderBlock) {
 
 // Modal handling
 const openModalBtn = document.getElementById('open-contact-modal');
-const navContactBtn = document.getElementById('nav-contact-btn');
+const navContactButtons = document.querySelectorAll('#nav-contact-btn, #compact-nav-contact-btn');
 const sectionNavLinks = document.querySelectorAll('[data-nav-target]');
 const siteHeader = document.querySelector('header');
 const compactNav = document.getElementById('compact-nav');
@@ -195,12 +195,12 @@ if (openModalBtn) {
   openModalBtn.addEventListener('click', () => showModal(true));
 }
 
-if (navContactBtn) {
-  navContactBtn.addEventListener('click', (event) => {
+navContactButtons.forEach((button) => {
+  button.addEventListener('click', (event) => {
     event.preventDefault();
     showModal(true);
   });
-}
+});
 
 if (siteHeader && compactNav && 'IntersectionObserver' in window) {
   const headerObserver = new IntersectionObserver(([entry]) => {
