@@ -47,6 +47,61 @@ header {
   z-index: 20;
 }
 
+.compact-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  width: 100%;
+  padding: 8px 12px;
+  background: rgba(253, 254, 252, 0.82);
+  border-bottom: 1px solid rgba(226, 232, 224, 0.8);
+  box-shadow: 0 4px 16px rgba(31, 41, 55, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-100%);
+  transition: opacity .2s ease, transform .2s ease, visibility .2s ease;
+}
+
+.compact-nav.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.compact-nav .lang-switcher {
+  flex-shrink: 0;
+  margin: 0;
+}
+
+.compact-nav .lang-btn {
+  padding: 5px 8px;
+}
+
+.compact-nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.compact-nav-links .btn {
+  padding: 7px 10px;
+  font-size: 14px;
+}
+
+section[id] {
+  scroll-margin-top: 72px;
+}
+
 .nav {
   display: flex; 
   justify-content: space-between; 
@@ -114,6 +169,7 @@ header {
 .btn {
   padding: 10px 16px;
   border-radius: var(--radius);
+  font: inherit;
   font-weight: 500;
   border: 1px solid var(--border);
   background: var(--surface);
@@ -128,7 +184,6 @@ header {
 
 .btn.big {
   padding: 16px 20px;
-  font-size: 18px;
   border-radius: 14px;
   box-shadow: 0 6px 20px rgba(52,106,184,0.15);
 }
@@ -410,6 +465,24 @@ footer {
 }
 
 @media (max-width: 640px){
+  .compact-nav {
+    gap: 8px;
+    padding: 7px 8px;
+  }
+
+  .compact-nav .lang-btn {
+    padding: 4px 6px;
+  }
+
+  .compact-nav-links {
+    gap: 4px;
+  }
+
+  .compact-nav-links .btn {
+    padding: 7px 8px;
+    font-size: 13px;
+  }
+
   .nav {
     flex-direction: column;
     gap: 10px;
@@ -433,6 +506,30 @@ footer {
 }
 
 @media (max-width: 480px){
+  .compact-nav {
+    flex-wrap: wrap;
+    gap: 6px;
+    row-gap: 4px;
+    padding: 6px;
+  }
+
+  .compact-nav .lang-switcher {
+    gap: 4px;
+  }
+
+  .compact-nav .lang-btn {
+    padding: 4px 5px;
+  }
+
+  .compact-nav-links .btn {
+    padding: 7px 5px;
+    font-size: 12px;
+  }
+
+  .compact-nav-links {
+    flex-wrap: wrap;
+  }
+
   .nav {
     gap: 10px;
   }

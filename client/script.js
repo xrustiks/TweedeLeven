@@ -165,6 +165,8 @@ if (showBtn && orderBlock) {
 const openModalBtn = document.getElementById('open-contact-modal');
 const navContactBtn = document.getElementById('nav-contact-btn');
 const sectionNavLinks = document.querySelectorAll('[data-nav-target]');
+const siteHeader = document.querySelector('header');
+const compactNav = document.getElementById('compact-nav');
 const contactModal = document.getElementById('contact-modal');
 const modalClose = document.getElementById('modal-close');
 const modalBackdrop = document.getElementById('modal-backdrop');
@@ -186,6 +188,16 @@ if (navContactBtn) {
     event.preventDefault();
     showModal(true);
   });
+}
+
+if (siteHeader && compactNav && 'IntersectionObserver' in window) {
+  const headerObserver = new IntersectionObserver(([entry]) => {
+    const isVisible = !entry.isIntersecting;
+    compactNav.classList.toggle('is-visible', isVisible);
+    compactNav.setAttribute('aria-hidden', String(!isVisible));
+  }, { threshold: 0 });
+
+  headerObserver.observe(siteHeader);
 }
 
 sectionNavLinks.forEach((link) => {
