@@ -1,5 +1,7 @@
 const translations = {
   en: {
+    'meta.title': 'Washing Machine & Dishwasher Repair at Home | TweedeLeven',
+    'meta.description': 'At-home washing machine and dishwasher repairs. Free technician call-out within 60 minutes. Repairs backed by a warranty of up to 12 months.',
     'brand.tagline': 'washing machine & dishwasher repair',
     'nav.services': 'Services',
     'nav.brands': 'Brands',
@@ -39,6 +41,8 @@ const translations = {
     'copy.success': 'Copied!'
   },
   ru: {
+    'meta.title': 'Ремонт стиральных и посудомоечных машин на дому | TweedeLeven',
+    'meta.description': 'Ремонт стиральных и посудомоечных машин у вас дома. Бесплатный выезд мастера в течение 60 минут. Гарантия на ремонт — до 12 месяцев.',
     'brand.tagline': 'ремонт стиральных и посудомоечных машин',
     'nav.services': 'Услуги',
     'nav.brands': 'Бренды',
@@ -78,6 +82,8 @@ const translations = {
     'copy.success': 'Скопировано!'
   },
   nl: {
+    'meta.title': 'Reparatie van wasmachines en vaatwassers aan huis | TweedeLeven',
+    'meta.description': 'Reparatie van wasmachines en vaatwassers bij u thuis. Gratis voorrijkosten binnen 60 minuten. Tot 12 maanden garantie op reparaties.',
     'brand.tagline': 'reparatie van wasmachines en vaatwassers',
     'nav.services': 'Diensten',
     'nav.brands': 'Merken',
@@ -130,6 +136,12 @@ function applyLanguage(lang) {
     const key = node.dataset.i18n;
     const value = selected[key];
     if (value) node.textContent = value;
+  });
+
+  document.querySelectorAll('[data-i18n-content]').forEach((node) => {
+    const key = node.dataset.i18nContent;
+    const value = selected[key];
+    if (value) node.setAttribute('content', value);
   });
 
   document.querySelectorAll('.lang-btn').forEach((button) => {
