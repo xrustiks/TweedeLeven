@@ -433,6 +433,15 @@ footer {
   color: var(--muted);
 }
 
+footer a {
+  color: inherit;
+}
+
+footer a:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 3px;
+}
+
 @media (min-width: 741px){
   .modal-content {
     width: min(860px, calc(100% - 20px));
