@@ -1,7 +1,9 @@
 const translations = {
   en: {
     'brand.tagline': 'washing machine & dishwasher repair',
-    'nav.servicesAndPrices': 'Services and Prices',
+    'nav.services': 'Services',
+    'nav.brands': 'Brands',
+    'nav.prices': 'Prices',
     'nav.contact': 'Contact',
     'hero.title': 'Washing Machine & Dishwasher Repair at Home',
     'hero.subtitle': 'Fast, reliable repairs at your home. The technician\'s call-out is free; you pay only for the repair.',
@@ -13,6 +15,11 @@ const translations = {
     'services.notHeating.text': 'Heating element, thermostat and sensor diagnostics',
     'services.noise.title': 'Leaks or unusual noise',
     'services.noise.text': 'Inspection of seals, pumps, bearings and suspension',
+    'brands.heading': 'Brands we service',
+    'brands.washers.title': 'Washing machines',
+    'brands.washers.list': 'We repair washing machines from Bosch, Siemens, Miele, AEG, Electrolux, Samsung, LG, Beko, Whirlpool, Indesit, Zanussi, Haier, Hisense, Bauknecht, Asko, Grundig, Candy, Hoover, SMEG, ETNA, Inventum, Pelgrim, ATAG, Amica and Gorenje, among other brands.',
+    'brands.dishwashers.title': 'Dishwashers',
+    'brands.dishwashers.list': 'We repair dishwashers from Bosch, Siemens, Miele, AEG, Electrolux, Beko, Whirlpool, Samsung, LG, SMEG, Asko, Grundig, Haier, Hisense, ETNA, Inventum, Pelgrim, ATAG, Bauknecht, Amica, Gorenje, Candy and Hoover, among other brands.',
     'prices.heading': 'Indicative service prices',
     'prices.diagnostics.title': 'Diagnostics',
     'prices.diagnostics.text': 'Free with repair',
@@ -33,7 +40,9 @@ const translations = {
   },
   ru: {
     'brand.tagline': 'ремонт стиральных и посудомоечных машин',
-    'nav.servicesAndPrices': 'Услуги и цены',
+    'nav.services': 'Услуги',
+    'nav.brands': 'Бренды',
+    'nav.prices': 'Цены',
     'nav.contact': 'Контакты',
     'hero.title': 'Ремонт стиральных и посудомоечных машин на дому',
     'hero.subtitle': 'Быстро и аккуратно ремонтируем технику у вас дома. Выезд мастера бесплатный, оплата только за выполненный ремонт.',
@@ -45,6 +54,11 @@ const translations = {
     'services.notHeating.text': 'Диагностика нагревателя, термостата и датчиков',
     'services.noise.title': 'Протекает или шумит',
     'services.noise.text': 'Проверка уплотнителей, насосов, подшипников и амортизаторов',
+    'brands.heading': 'Бренды, которые мы обслуживаем',
+    'brands.washers.title': 'Стиральные машины',
+    'brands.washers.list': 'Ремонтируем стиральные машины Bosch, Siemens, Miele, AEG, Electrolux, Samsung, LG, Beko, Whirlpool, Indesit, Zanussi, Haier, Hisense, Bauknecht, Asko, Grundig, Candy, Hoover, SMEG, ETNA, Inventum, Pelgrim, ATAG, Amica и Gorenje, а также технику других марок.',
+    'brands.dishwashers.title': 'Посудомоечные машины',
+    'brands.dishwashers.list': 'Ремонтируем посудомоечные машины Bosch, Siemens, Miele, AEG, Electrolux, Beko, Whirlpool, Samsung, LG, SMEG, Asko, Grundig, Haier, Hisense, ETNA, Inventum, Pelgrim, ATAG, Bauknecht, Amica, Gorenje, Candy и Hoover, а также технику других марок.',
     'prices.heading': 'Ориентировочные цены на услуги',
     'prices.diagnostics.title': 'Диагностика',
     'prices.diagnostics.text': 'Бесплатно при ремонте',
@@ -65,7 +79,9 @@ const translations = {
   },
   nl: {
     'brand.tagline': 'reparatie van wasmachines en vaatwassers',
-    'nav.servicesAndPrices': 'Diensten en prijzen',
+    'nav.services': 'Diensten',
+    'nav.brands': 'Merken',
+    'nav.prices': 'Prijzen',
     'nav.contact': 'Contact',
     'hero.title': 'Reparatie van wasmachines en vaatwassers aan huis',
     'hero.subtitle': 'Snelle, vakkundige reparatie bij u thuis. Voorrijkosten zijn gratis; u betaalt alleen voor de reparatie.',
@@ -77,6 +93,11 @@ const translations = {
     'services.notHeating.text': 'Diagnose van verwarmingselement, thermostaat en sensoren',
     'services.noise.title': 'Lekkage of ongewoon geluid',
     'services.noise.text': 'Controle van afdichtingen, pompen, lagers en schokdempers',
+    'brands.heading': 'Merken die wij repareren',
+    'brands.washers.title': 'Wasmachines',
+    'brands.washers.list': 'Wij repareren wasmachines van Bosch, Siemens, Miele, AEG, Electrolux, Samsung, LG, Beko, Whirlpool, Indesit, Zanussi, Haier, Hisense, Bauknecht, Asko, Grundig, Candy, Hoover, SMEG, ETNA, Inventum, Pelgrim, ATAG, Amica en Gorenje, naast andere merken.',
+    'brands.dishwashers.title': 'Vaatwassers',
+    'brands.dishwashers.list': 'Wij repareren vaatwassers van Bosch, Siemens, Miele, AEG, Electrolux, Beko, Whirlpool, Samsung, LG, SMEG, Asko, Grundig, Haier, Hisense, ETNA, Inventum, Pelgrim, ATAG, Bauknecht, Amica, Gorenje, Candy en Hoover, naast andere merken.',
     'prices.heading': 'Richtprijzen voor reparaties',
     'prices.diagnostics.title': 'Diagnose',
     'prices.diagnostics.text': 'Gratis bij reparatie',
@@ -143,7 +164,7 @@ if (showBtn && orderBlock) {
 // Modal handling
 const openModalBtn = document.getElementById('open-contact-modal');
 const navContactBtn = document.getElementById('nav-contact-btn');
-const servicesPricesBtn = document.getElementById('services-prices-btn');
+const sectionNavLinks = document.querySelectorAll('[data-nav-target]');
 const contactModal = document.getElementById('contact-modal');
 const modalClose = document.getElementById('modal-close');
 const modalBackdrop = document.getElementById('modal-backdrop');
@@ -167,10 +188,10 @@ if (navContactBtn) {
   });
 }
 
-if (servicesPricesBtn) {
-  servicesPricesBtn.addEventListener('click', (event) => {
+sectionNavLinks.forEach((link) => {
+  link.addEventListener('click', (event) => {
     event.preventDefault();
-    const target = document.getElementById('services');
+    const target = document.getElementById(link.dataset.navTarget);
     if (!target) return;
 
     target.scrollIntoView({
@@ -178,7 +199,7 @@ if (servicesPricesBtn) {
       block: 'start'
     });
   });
-}
+});
 
 if (emailCopyBtn) {
   const emailTextElement = emailCopyBtn.querySelector('.contact-email-text');
